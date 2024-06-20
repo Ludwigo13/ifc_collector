@@ -1,3 +1,4 @@
+import time
 from datetime import datetime, timedelta
 from random import uniform
 
@@ -12,6 +13,8 @@ class Scheduler:
         self.end_time = end_time
         self.interval = interval
         self.scheduled_times = []
+        self.consumed_scheduled_times = 0
+        self.start_date = None
 
     def generate(self) -> None:
         self.__is_initialized()
@@ -43,6 +46,9 @@ class Scheduler:
         tmp_datetime = datetime.strptime(str_time, time_format)
         return timedelta(hours=tmp_datetime.hour, minutes=tmp_datetime.minute, seconds=tmp_datetime.second)
 
+    def convert_to_datetime(self, timedelta: timedelta) -> datetime:
+        return datetime(self.start_date.year, self.start_date.month, self.start_date.day) + timedelta
+
     def __is_initialized(self) -> None:
         if any(arg is None for arg in (self.start_time, self.end_time, self.interval)):
             raise ValueError("Class not initialize correctly")
@@ -50,12 +56,29 @@ class Scheduler:
     def __str__(self):
         return f"Start : {self.start_time}, End: {self.end_time}, interval: {self.interval}"
 
+    def wait_next_scheduled_time(self) -> bool:
+        if self.start_date is None:
+            raise ValueError("start_date can't be empty")
+        if not isinstance(self.start_date, datetime):
+            raise ValueError("start_date is not a datetime")
+
+        if self.consumed_scheduled_times == len(self.scheduled_times):
+            return False
+
+        now = datetime.now()
+        diff_seconds = (self.convert_to_datetime(self.scheduled_times[self.consumed_scheduled_times]) - now).total_seconds()
+        print(f"Wait {diff_seconds}")
+        time.sleep(diff_seconds)
+        self.consumed_scheduled_times += 1
+        return True
+
 
 if __name__ == '__main__':
     scheduler = Scheduler(timedelta(hours=10), timedelta(hours=16), 100)
     scheduler.generate()
     schedule_path = "../data/schedule.txt"
     scheduler.write_txt(schedule_path)
+    scheduler.start_date = datetime.now() + timedelta(hours=12)
 
     new_scheduler = Scheduler()
     new_scheduler.read_txt(schedule_path)
@@ -64,3 +87,6 @@ if __name__ == '__main__':
 
     print(scheduler)
     print(new_scheduler)
+
+    while scheduler.wait_next_scheduled_time():
+        pass
