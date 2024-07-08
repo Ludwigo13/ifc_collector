@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Scheduler added">
-      <change afterPath="$PROJECT_DIR$/utils/collector_mod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ifcCollector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ifcCollector.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/db_mod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/dto.py" afterDir="false" />
@@ -32,6 +30,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -48,6 +49,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.app.executor": "Run",
     "Python.collector_mod.executor": "Run",
+    "Python.db_mod.executor": "Run",
     "Python.generate_schedules.executor": "Run",
     "Python.scheduler.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -101,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718845388925</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Scheduler added">
+      <option name="closed" value="true" />
+      <created>1720409085450</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720409085450</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

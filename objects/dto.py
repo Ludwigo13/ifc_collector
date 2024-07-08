@@ -1,3 +1,6 @@
+import sqlite3
+from datetime import datetime
+
 class IFC_DTO:
     def __init__(self, previous_close, open_price, bid, ask, days_range, week_52_range, volume, avg_volume,
                  market_cap, beta, pe_ratio, eps, earnings_date, forward_dividend_yield, ex_dividend_date,
@@ -19,11 +22,35 @@ class IFC_DTO:
         self.ex_dividend_date = ex_dividend_date
         self.target_est = target_est
 
-    @classmethod
-    def map_to_dto(cls, data):
+    def to_tuple(self):
+        return (
+            self.previous_close, self.open_price, self.bid, self.ask,
+            self.days_range, self.week_52_range, self.volume, self.avg_volume,
+            self.market_cap, self.beta, self.pe_ratio, self.eps,
+            self.earnings_date, self.forward_dividend_yield, self.ex_dividend_date,
+            self.target_est, datetime.now().date(), datetime.now().time().strftime('%H:%M:%S')
+        )
+
+    def insert_into_db(self):
+        conn = sqlite3.connect('CollecteDeDonneeProject.db')
+        cursor = conn.cursor()
+
+        cursor.execute('''
+            INSERT INTO ifc_data (
+                previous_close, open_price, bid, ask, days_range, week_52_range, 
+                volume, avg_volume, market_cap, beta, pe_ratio, eps, earnings_date, 
+                forward_dividend_yield, ex_dividend_date, target_est, date, time
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', self.to_tuple())
+
+        conn.commit()
+        conn.close()
+
+    @staticmethod
+    def map_to_dto(data):
         data_dict = {item[0]: item[1] for item in data}
 
-        return cls(
+        return IFC_DTO(
             previous_close=data_dict.get('Previous Close'),
             open_price=data_dict.get('Open'),
             bid=data_dict.get('Bid'),
