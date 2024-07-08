@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+import utils.db_mod
 
 class IFC_DTO:
     def __init__(self, previous_close, open_price, bid, ask, days_range, week_52_range, volume, avg_volume,
@@ -32,7 +33,7 @@ class IFC_DTO:
         )
 
     def insert_into_db(self):
-        conn = sqlite3.connect('CollecteDeDonneeProject.db')
+        conn = sqlite3.connect('data\\CollecteDeDonneeProject.db')
         cursor = conn.cursor()
 
         cursor.execute('''

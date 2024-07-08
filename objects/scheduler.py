@@ -21,6 +21,7 @@ class Scheduler:
         self.__is_initialized()
         time_diff = self.end_time - self.start_time
         time_interval = time_diff / self.interval
+        time_interval = time_interval - timedelta(microseconds=time_interval.microseconds)
         for i in range(self.interval):
             random_time = timedelta(seconds=int(uniform(0, time_interval.total_seconds())))
             scheduled_time = (time_interval * i) + random_time + self.start_time
@@ -61,7 +62,7 @@ class Scheduler:
         now = datetime.now()
         run_time = convert.add_timedelta_to_datetime(self.start_date, self.scheduled_times[self.consumed_scheduled_times])
         diff_seconds = (run_time - now).total_seconds()
-        print(f"Wait {diff_seconds}")
+        print(f"Wait {diff_seconds} seconds")
         time.sleep(diff_seconds)
         self.consumed_scheduled_times += 1
         return True
