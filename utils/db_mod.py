@@ -1,11 +1,11 @@
 import sqlite3
 
 def create_db():
-    conn = sqlite3.connect('CollecteDeDonneeProject.db')
+    conn = sqlite3.connect('data\\CollecteDeDonneeProject.db')
     cursor = conn.cursor()
 
     cursor.execute('''
-        CREATE TABLE ifc_data (
+        CREATE TABLE IF NOT EXISTS ifc_data (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             previous_close TEXT,
             open_price TEXT,
@@ -30,6 +30,7 @@ def create_db():
 
     conn.commit()
     conn.close()
+
 
 create_db()
 

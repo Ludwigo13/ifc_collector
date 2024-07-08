@@ -1,10 +1,11 @@
 from objects.dto import IFC_DTO
-from utils.collector_mod import Collector
+from objects.collector_mod import Collector
+from objects.scheduler import Scheduler
 import sqlite3
 import pandas as pd
 
 def view_data():
-    conn = sqlite3.connect('CollecteDeDonneeProject.db')
+    conn = sqlite3.connect('data\\CollecteDeDonneeProject.db')
 
     df = pd.read_sql_query('SELECT * FROM ifc_data', conn)
 
@@ -13,13 +14,23 @@ def view_data():
     conn.close()
 
 if __name__ == '__main__':
-    collector = Collector('https://ca.finance.yahoo.com/quote/IFC.TO')
-    data = collector.get_summary()
+    dates = (
+        "9-07-2024",
+        "10-07-2024"
+    )
 
-    dto = IFC_DTO.map_to_dto(data)
-    dto.insert_into_db()
+    for date in dates:
+        schedule = Scheduler()
+        schedule.read_txt(f"data\\{date}.txt")
 
-    view_data()
+        while schedule.wait_next_scheduled_time():
+            collector = Collector('https://ca.finance.yahoo.com/quote/IFC.TO')
+            data = collector.get_summary()
+
+            dto = IFC_DTO.map_to_dto(data)
+            dto.insert_into_db()
+
+    #view_data()
     #print(f'Data inserted: {dto.to_tuple()}')
 
 
