@@ -74,22 +74,3 @@ class Scheduler:
         time.sleep(diff_seconds)
         self.consumed_scheduled_times += 1
         return True
-
-
-if __name__ == '__main__':
-    scheduler = Scheduler(timedelta(hours=10), timedelta(hours=16), 100, datetime.now())
-    scheduler.generate()
-    schedule_path = "../data/schedule.txt"
-    scheduler.write_txt(schedule_path)
-    scheduler.start_date = datetime.now() + timedelta(hours=12)
-
-    new_scheduler = Scheduler()
-    new_scheduler.read_txt(schedule_path)
-    print(scheduler.scheduled_times)
-    print(new_scheduler.scheduled_times)
-
-    print(scheduler)
-    print(new_scheduler)
-
-    while scheduler.wait_next_scheduled_time():
-        pass

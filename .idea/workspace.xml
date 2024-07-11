@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Added header" />
+    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Added data folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CollecteDeDonneeProject.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/CollecteDeDonneeProject.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720721816017</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added data folder">
+      <option name="closed" value="true" />
+      <created>1720727104925</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720727104925</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +128,7 @@
     <MESSAGE value="Scheduler : added wait_next_scheduled_time and convert_to_datetime" />
     <MESSAGE value="First fully fonctionnal build" />
     <MESSAGE value="Added header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added header" />
+    <MESSAGE value="Added data folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added data folder" />
   </component>
 </project>
