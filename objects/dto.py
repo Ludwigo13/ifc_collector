@@ -2,6 +2,7 @@ import sqlite3
 from datetime import datetime
 import utils.db_mod
 
+
 class IFC_DTO:
     def __init__(self, previous_close, open_price, bid, ask, days_range, week_52_range, volume, avg_volume,
                  market_cap, beta, pe_ratio, eps, earnings_date, forward_dividend_yield, ex_dividend_date,

@@ -60,8 +60,16 @@ class Scheduler:
             return False
 
         now = datetime.now()
-        run_time = convert.add_timedelta_to_datetime(self.start_date, self.scheduled_times[self.consumed_scheduled_times])
-        diff_seconds = (run_time - now).total_seconds()
+        # Skip past scheduled time
+        while True:
+            run_time = convert.add_timedelta_to_datetime(self.start_date,
+                                                         self.scheduled_times[self.consumed_scheduled_times])
+            diff_seconds = (run_time - now).total_seconds()
+            if diff_seconds < 0:
+                self.consumed_scheduled_times += 1
+            else:
+                break
+
         print(f"Wait {diff_seconds} seconds")
         time.sleep(diff_seconds)
         self.consumed_scheduled_times += 1

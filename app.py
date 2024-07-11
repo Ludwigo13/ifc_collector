@@ -4,6 +4,7 @@ from objects.scheduler import Scheduler
 import sqlite3
 import pandas as pd
 
+
 def view_data():
     conn = sqlite3.connect('data\\CollecteDeDonneeProject.db')
 
@@ -12,6 +13,7 @@ def view_data():
     print(df)
 
     conn.close()
+
 
 if __name__ == '__main__':
     dates = (
@@ -29,8 +31,3 @@ if __name__ == '__main__':
 
             dto = IFC_DTO.map_to_dto(data)
             dto.insert_into_db()
-
-    #view_data()
-    #print(f'Data inserted: {dto.to_tuple()}')
-
-
