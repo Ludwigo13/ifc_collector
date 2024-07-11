@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Added data folder">
+    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Remove scheduler.txt and scheduler.py main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/CollecteDeDonneeProject.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/CollecteDeDonneeProject.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/scheduler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720727104925</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Remove scheduler.txt and scheduler.py main">
+      <option name="closed" value="true" />
+      <created>1720728653877</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720728653877</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +137,7 @@
     <MESSAGE value="First fully fonctionnal build" />
     <MESSAGE value="Added header" />
     <MESSAGE value="Added data folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added data folder" />
+    <MESSAGE value="Remove scheduler.txt and scheduler.py main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove scheduler.txt and scheduler.py main" />
   </component>
 </project>

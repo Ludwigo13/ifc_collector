@@ -69,6 +69,9 @@ class Scheduler:
                 self.consumed_scheduled_times += 1
             else:
                 break
+            if self.consumed_scheduled_times == len(self.scheduled_times):
+                print(f"Invalid Schedule: {self.start_date.date()} is in the past")
+                return False
 
         print(f"Wait {diff_seconds} seconds")
         time.sleep(diff_seconds)
