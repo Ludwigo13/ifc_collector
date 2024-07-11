@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="First fully fonctionnal build">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_schedules.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_schedules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/collector_mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/collector_mod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/scheduler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db_mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_mod.py" afterDir="false" />
-    </list>
+    <list default="true" id="26447a7b-c778-4b75-82fd-c41e85b11360" name="Changes" comment="Added header" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720481391629</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added header">
+      <option name="closed" value="true" />
+      <created>1720721816017</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720721816017</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +116,7 @@
     <MESSAGE value="Scheduler added" />
     <MESSAGE value="Scheduler : added wait_next_scheduled_time and convert_to_datetime" />
     <MESSAGE value="First fully fonctionnal build" />
-    <option name="LAST_COMMIT_MESSAGE" value="First fully fonctionnal build" />
+    <MESSAGE value="Added header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added header" />
   </component>
 </project>
