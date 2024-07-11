@@ -10,15 +10,20 @@ class Collector:
         self.data = None
 
     def get_webpage(self):
-        response = requests.get(self.url).content
-        soup = BeautifulSoup(response, 'html.parser')
+        headers = requests.utils.default_headers()
+        headers.update({
+            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0',
+        })
+        response = requests.get(self.url, headers=headers)
+        soup = BeautifulSoup(response.text, 'html.parser')
         return soup
 
     def get_summary(self):
-        table_prevision = self.soup.find(id='quote-summary')
-        rows_prevision = table_prevision.find_all('tr')
+        self.show_notice()
+        table_summary = self.soup.find(id='quote-summary')
+        rows_summary = table_summary.find_all('tr')
         self.data = []
-        for row in rows_prevision:
+        for row in rows_summary:
             cells = row.find_all('td')
             row_data = []
             for cell in cells:
@@ -26,3 +31,7 @@ class Collector:
             if row_data:
                 self.data.append(row_data)
         return self.data
+
+    def show_notice(self):
+        notice = self.soup.find(id='quote-market-notice')
+        print(notice.get_text())
